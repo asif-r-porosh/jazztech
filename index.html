@@ -1,627 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="USA Based Software Development Company">
-    <meta name="robots" content="index, follow">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Angular, React, Vue, jQuery, TypeScript, Bootstrap, Materialize, Foundation, Bulma, Tailwind, MySQL, MariaDB, Oracle, PostgreSQL, SQL Server, SQLite, MongoDB, IoT, Django, Flask, Quart, Sanic, Tornado, FastAPI, AIOHTTP, Rails, Express, Koa, Meteor, Sails, SocketIO, Laravel, CodeIgniter, Arduino, Raspberry Pi, Orange Pi, Windows, Linux, iOS, Android, macOS, PHP, Python, NodeJS, Ruby, LAMP, MEAN">
-    <meta name="author" content="Asif R. Porosh">
-
-    <link rel="canonical" href="http://jazztech.com/" />
-    <link rel="shortcut icon" href="assets/img/favicon.png">
-
-    <title>JazzTech</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Icon -->
-    <link rel="stylesheet" href="assets/css/lineicons.css">
-    <!-- Animate -->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <!-- Main Style -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <!-- Responsive Style -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
-
-</head>
-
-<body>
-
-    <!-- Header Area wrapper Starts -->
-    <header id="header-wrap">
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+    <head>
+        <meta charset="utf-8" />
+        <title>JazzTech | Backend, Automation & Integration Engineering</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="JazzTech is a boutique engineering firm focused on backend systems, automation, and integration for organizations that cannot afford unreliable software. We design and build the internal platforms, data flows, and automation layers that keep operations running smoothly." />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Asif R. Porosh" />
+        <link rel="canonical" href="https://jazztech.us/" />
+        <!-- Open Graph / Social Preview -->
+        <meta property="og:title" content="JazzTech | Backend, Automation & Integration Engineering" />
+        <meta property="og:description" content="Boutique engineering focused on backend systems, automation, and integration for organizations that cannot afford unreliable software." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jazztech.us/" />
+        <meta property="og:image" content="https://jazztech.us/assets/favicon/android-chrome-512x512.png" />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="JazzTech | Backend, Automation & Integration Engineering" />
+        <meta name="twitter:description" content="Boutique engineering focused on backend systems, automation, and integration for organizations that cannot afford unreliable software." />
+        <meta name="twitter:image" content="https://jazztech.us/assets/favicon/android-chrome-192x192.png" />
+        <!-- IBM Plex Sans for brand + headings -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+        <link rel="manifest" href="assets/favicon/site.webmanifest" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+        <style>
+            :root {
+                --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                --font-heading: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            }
+            body {
+                scroll-behavior: smooth;
+                font-family: var(--font-body);
+            }
+            /* Anchor offset so sections don't hide under fixed navbar */
+            section[id] {
+                position: relative;
+            }
+            section[id]::before {
+                content: "";
+                display: block;
+                height: 72px; /* approximate navbar height */
+                margin-top: -72px; /* pull anchor up so heading appears below navbar */
+                visibility: hidden;
+            }
+            section {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+                scroll-margin-top: 50px;
+            }
+            #hero {
+                padding-top: 7rem;
+                padding-bottom: 6rem;
+            }
+            .hero-title {
+                font-family: var(--font-heading);
+                font-size: 2.4rem;
+                font-weight: 600;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+                color: #555;
+            }
+            .section-title {
+                font-family: var(--font-heading);
+                font-size: 1.75rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: var(--font-heading);
+            }
+            .nav-link {
+                font-size: 0.95rem;
+            }
+            /* Active menu styling */
+            .navbar .nav-link.active {
+                font-weight: 600;
+                border-bottom: 2px solid #000;
+            }
+            /* Brand / logo */
+            .jazztech-brand {
+                font-family: var(--font-heading);
+                font-weight: 600;
+                letter-spacing: 0.04em;
+                color: #181a2c;
+                display: inline-block;
+                border-top: 2px solid currentColor;
+                padding-top: 0.2rem;
+                line-height: 1.1;
+            }
+            .navbar-brand .jazztech-brand {
+                font-size: 1.25rem;
+            }
+            footer {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                border-top: 1px solid #e5e5e5;
+                font-size: 0.9rem;
+                color: #777;
+            }
+        </style>
+        <!-- Structured Data (JSON-LD) -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "JazzTech",
+                "url": "https://jazztech.us/",
+                "description": "JazzTech is a boutique engineering firm focused on backend systems, automation, and integration.",
+                "email": "info@jazztech.us",
+                "telephone": "+1-929-231-0909",
+                "logo": "https://jazztech.us/assets/favicon/android-chrome-512x512.png"
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <a href="/" class="navbar-brand"><img src="assets/img/jazztech-logo.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="lni lni-menu"></i></button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
-                        <li class="nav-item active">
-                            <a class="nav-link nav-about" href="#hero-area">Home</a>
+                <a class="navbar-brand" href="#hero">
+                    <span class="jazztech-brand">JazzTech</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-services" href="#services">Services</a>
+                            <a class="nav-link" href="#services">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-process" href="#process">Process</a>
+                            <a class="nav-link" href="#solutions">Solutions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-stacks" href="#stacks">Stacks</a>
+                            <a class="nav-link" href="#approach">Approach</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-technologies" href="#technologies">Technologies</a>
+                            <a class="nav-link" href="#technologies">Technologies</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-contact" href="#contact">Contact</a>
+                            <a class="nav-link" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Navbar End -->
-
-        <!-- Hero Area Start -->
-        <div id="hero-area" class="hero-area-bg" style="height:100vh;">
+        <!-- Hero -->
+        <section id="hero" class="bg-light">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-                        <div class="contents">
-                            <h2 class="head-title">Everything that You Need</h2>
-                            <p class="text-justify" style="line-height: 2rem;">
-                                We help businesses in their Digital Transformation to become more agile in delivering products and services to consumers. With a gamut of innovative solutions, ground breaking technology, streamline business processes, and data driven decisions, we furnish
-                                businesses across varying industry verticals with appropriate tools to increase return on investment, sales and conversion rates of customers.
+                <div class="row align-items-center gy-4">
+                    <div class="col-lg-7">
+                        <h1 class="hero-title mb-3">Backend, Automation, and Integration Engineering – Done Properly</h1>
+                        <p class="hero-subtitle mb-4">JazzTech is a boutique engineering firm focused on backend systems, automation, and integration for organizations that cannot afford unreliable software. We design and build the internal platforms, data flows, and automation layers that keep operations running smoothly.</p>
+                        <a href="#contact" class="btn btn-dark btn-lg">Talk to an engineer</a>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="border rounded-3 p-4 bg-white shadow-sm">
+                            <h2 class="h5 mb-3">What we focus on</h2>
+                            <ul class="mb-0">
+                                <li>Backend platforms and API layers</li>
+                                <li>Process automation and data workflows</li>
+                                <li>System integration and event-driven architectures</li>
+                                <li>Operational dashboards and controls</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About -->
+        <section id="about">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <h2 class="section-title">About JazzTech</h2>
+                        <p>JazzTech is led by senior engineers with long experience in high-volume telecom, financial, and enterprise environments. We have built and operated systems where outages, data inconsistencies, and poorly controlled changes are simply not an option.</p>
+                        <p>We bring that discipline into every engagement: clear architecture, conservative assumptions, strong automation, and a constant focus on how the system will behave in production, not just in a demo.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="h5 mb-3">What makes us different</h3>
+                        <ul class="mb-3">
+                            <li>Senior-only engineering – no hidden junior layers.</li>
+                            <li>Design decisions driven by reliability and observability.</li>
+                            <li>Narrow focus on backend, automation, and integration.</li>
+                            <li>Experience with reliability-sensitive, high-throughput systems.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services -->
+        <section id="services" class="bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Services</h2>
+                <p class="text-center mb-5">We specialise in a focused set of services that strengthen the core of your systems rather than adding surface-level features.</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h5 mb-2">Backend Platforms</h3>
+                            <p class="mb-0">Design and implementation of backend services, domain logic, and API layers that act as the backbone for products, portals, and internal tools.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h5 mb-2">Automation & Data Workflows</h3>
+                            <p class="mb-0">Replacement of manual steps and ad-hoc scripts with structured workflows, schedulers, and data pipelines for ingestion, transformation, validation, and reconciliation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h5 mb-2">System Integration</h3>
+                            <p class="mb-0">Design and hardening of interfaces between systems: internal services, partner APIs, and data exchange processes with clear contracts and error-handling.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h5 mb-2">Event-Driven & Messaging</h3>
+                            <p class="mb-0">Event-driven and message-based flows for systems requiring decoupling, responsiveness, or high throughput, designed with monitoring and resilience in mind.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h5 mb-2">Operational Insight</h3>
+                            <p class="mb-0">Internal dashboards, KPI views, health checks, and alerts that give operations teams the visibility and control they need to act with confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Solutions -->
+        <section id="solutions">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Problems We Solve</h2>
+                <p class="text-center mb-5">We are typically engaged when backend systems, data flows, or internal processes are limiting the business. Here are typical problem spaces where JazzTech is a good fit.</p>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="h-100 p-4 border rounded-3">
+                            <h3 class="h5 mb-2">Manual workflows to structured systems</h3>
+                            <p class="mb-0">We consolidate email-, spreadsheet-, and ticket-driven workflows into a single, traceable backend system with clear ownership, audit trails, and automation where it makes sense.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="h-100 p-4 border rounded-3">
+                            <h3 class="h5 mb-2">Fragile integrations to stable interfaces</h3>
+                            <p class="mb-0">We replace brittle point-to-point connections with hardened integration layers that include monitoring, structured error handling, and clear retry strategies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="h-100 p-4 border rounded-3">
+                            <h3 class="h5 mb-2">Scattered scripts to maintainable automation</h3>
+                            <p class="mb-0">We take unowned cron jobs and ad-hoc scripts and turn them into a defined automation layer with logging, alerts, ownership, and documentation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="h-100 p-4 border rounded-3">
+                            <h3 class="h5 mb-2">Guesswork to operational insight</h3>
+                            <p class="mb-0">We provide dashboards, metrics, and health views so you can see how backend processes behave, catch issues earlier, and make decisions based on observable facts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Approach -->
+        <section id="approach" class="bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Our Approach</h2>
+                <p class="text-center mb-5">Our delivery model is engineering-first and process-driven. We design with production realities in mind, not just idealised diagrams.</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h6 text-uppercase text-muted mb-1">Step 1</h3>
+                            <h4 class="h5 mb-2">Discovery & Mapping</h4>
+                            <p class="mb-0">We analyse your current architecture, data flows, and operational pain points to understand where software can realistically reduce risk or effort.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h6 text-uppercase text-muted mb-1">Step 2</h3>
+                            <h4 class="h5 mb-2">Technical Blueprint</h4>
+                            <p class="mb-0">We produce a concise architecture describing services, integrations, data models, and automation points so you see the solution shape before code is written.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h6 text-uppercase text-muted mb-1">Step 3</h3>
+                            <h4 class="h5 mb-2">Iterative Delivery</h4>
+                            <p class="mb-0">We deliver in small, verifiable increments with clear acceptance criteria and regular check-ins, focusing on working software over documentation alone.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h6 text-uppercase text-muted mb-1">Step 4</h3>
+                            <h4 class="h5 mb-2">Deployment & Hardening</h4>
+                            <p class="mb-0">We support rollout with logging, metrics, alerts, and fallback strategies so the system behaves predictably under real load and failure scenarios.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="h-100 p-4 border rounded-3 bg-white">
+                            <h3 class="h6 text-uppercase text-muted mb-1">Step 5</h3>
+                            <h4 class="h5 mb-2">Ongoing Partnership</h4>
+                            <p class="mb-0">We remain available to extend and refine the system as your operations evolve, treating software as an asset to be maintained, not a one-off project.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Technologies (vertically stacked) -->
+        <section id="technologies">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Technologies</h2>
+                <p class="text-center mb-4">We work with modern backend and cloud-native stacks. Tools are chosen to fit the problem, not the other way around.</p>
+                <div class="p-4 border rounded-3 mb-3">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Backend & Services</h3>
+                    <p class="mb-0">Backend services in Java or Python, RESTful APIs, and service-to-service integrations designed for clarity, testability, and long-term maintainability.</p>
+                </div>
+                <div class="p-4 border rounded-3">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Data & Deployment</h3>
+                    <p class="mb-0">Relational and NoSQL databases, containerised deployments, and cloud-hosted environments designed with observability, control, and operational resilience in mind.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Contact -->
+        <section id="contact" class="bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Contact</h2>
+                <p class="text-center mb-4">If you are running critical operations on fragile workflows, legacy integrations, or under-documented backend systems, it is time to stabilise the foundation.</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="p-4 border rounded-3 bg-white mb-4">
+                            <p class="mb-1">
+                                <strong>Email:</strong>
+                                info@jazztech.us
                             </p>
-                            <div class="header-button pt-3">
-                                <a href="javascript:void(0)" class="btn btn-common trigger-link" data-link="nav-contact">Contact</a>
-                            </div>
+                            <p class="mb-0">
+                                <strong>Phone:</strong>
+                                +1 (929) 231-0909
+                            </p>
                         </div>
-                    </div>
-                    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-                        <div class="intro-img">
-                            <img class="img-fluid" src="assets/img/hero-about.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Hero Area End -->
-
-    </header>
-    <!-- Header Area wrapper End -->
-
-    <!-- Services Section Start -->
-    <section id="services" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Our Services</h2>
-                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-layout"></i>
+                        <!--                         
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input id="name" type="text" class="form-control" placeholder="Your name" />
                             </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Web Portals</a></h3>
-                                <p>Web-based platform that collects information from different sources into a single user interface</p>
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Company</label>
+                                <input id="company" type="text" class="form-control" placeholder="Your company (optional)" />
                             </div>
-                        </div>
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-wallet"></i>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Work Email</label>
+                                <input id="email" type="email" class="form-control" placeholder="you@company.com" />
                             </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Ecommerce Apps</a></h3>
-                                <p>Ecommerce apps that'll Revolutionise your Business.</p>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Briefly describe your systems or challenges</label>
+                                <textarea id="message" class="form-control" rows="4"></textarea>
                             </div>
-                        </div>
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-hammer"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Custom Web Apps</a></h3>
-                                <p>Custom web apps are complex, not available out-of-the-box, and are designed to capture, process, and store data.</p>
-                            </div>
-                        </div>
+                            <button type="submit" class="btn btn-dark">Submit enquiry</button>
+                        </form> 
+                        -->
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-apartment"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Enterprise Web Apps</a></h3>
-                                <p>Large-scale web-based applications that allow you to handle your company's internal and external needs and operations.</p>
-                            </div>
-                        </div>
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-bi-cycle"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Customer-facing Web Apps</a></h3>
-                                <p>Apps your customers use to connect and engage with your business.</p>
-                            </div>
-                        </div>
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-display"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Desktop Apps</a></h3>
-                                <p>Large or small scale An application that runs stand-alone in a desktop or laptop computer.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-cake"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Content Management Systems</a></h3>
-                                <p>Create, manage, and optimize your customers' digital experience.</p>
-                            </div>
-                        </div>
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-bi-cycle"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Web Support and Maintenance</a></h3>
-                                <p>Regularly checking your website for issues and mistakes and keeping it updated and relevant.</p>
-                            </div>
-                        </div>
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-vector"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">API development &amp; Integration</a></h3>
-                                <p>Share customized data or functionality, or integrate with providers.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-road"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Migration and Optimization</a></h3>
-                                <p>Transfer &amp; optimize data, accounts, and functionality.</p>
-                            </div>
-                        </div>
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-travel"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Internet of Things (IoT)</a></h3>
-                                <p>System of interrelated, internet-connected objects that are able to collect and transfer data.</p>
-                            </div>
-                        </div>
-                        <div class="card services-item wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="icon">
-                                <i class="lni lni-vector"></i>
-                            </div>
-                            <div class="services-content">
-                                <h3><a href="javascript:void(0)">Remote Monitor (RMM/RMON)</a></h3>
-                                <p>Locate, update, and monitor client endpoints</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-    <!-- Services Section End -->
-
-
-    <!-- Process Section Start -->
-    <section id="process" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Our Adaptable Process</h2>
-                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-            </div>
-            <div class="row">
-                <div class="col pb-5">
-                    <p class="text-center">
-                        We have a dedicated and adaptable agile software development process wherein we keep our clients in the loop at every stage of the development process.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card wow fadeInDown" data-wow-delay="0.9s">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">Requirements Gathering <span class="circled-digit-1"></span></h5>
-                                <p class="card-text">Identifying your project's exact requirements from start to finish.</p>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInDown" data-wow-delay="0.9s">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">Analyzing and Planning <span class="circled-digit-2"></span></h5>
-                                <p class="card-text">Assessment of every expense or problem related to your project, prior to the commencement of work on it.</p>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInDown" data-wow-delay="0.9s">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">Design and Prototyping <span class="circled-digit-3"></span></h5>
-                                <p class="card-text">Implement your ideas into tangible forms of varying degrees of fidelity to capture design concepts and test them with users.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card wow fadeInUp" data-wow-delay="0.9s">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">Software Development <span class="circled-digit-4"></span></h5>
-                                <p class="card-text">Perceiving, detailing, designing, programming, documenting, testing, and bug fixing involved in creating and maintaining your applications, frameworks, or other software components.</p>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInUp" data-wow-delay="0.9s">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">Quality Assurance <span class="circled-digit-5"></span></h5>
-                                <p class="card-text">Preventing mistakes and defects in developed product and avoiding problems when delivering to you.</p>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInUp" data-wow-delay="0.9s">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">Deployment <span class="circled-digit-6"></span></h5>
-                                <p class="card-text">Rolling out the developed product, tailored just for your need.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-center">
-                    <div class="card wow fadeInUp" data-wow-delay="0.9s">
-                        <div class="card-body">
-                            <h5 class="d-none d-sm-none d-md-block"><span class="circled-digit-7 process-digit-icon">Support</span></h5>
-                            <h5 class="card-title d-flex justify-content-between d-none d-sm-none d-md-none">Support <span class="circled-digit-7"></span></h5>
-                            <h5 class="card-title d-none d-sm-none d-md-block">Support
-                            </h5>
-
-                            <p class="card-text">Ensure the support and maintenance of a your software solution 24/7.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Process Section End -->
-
-
-    <!-- Stacks Section Start -->
-    <section id="stacks" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Stacks we Mastered</h2>
-                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-            </div>
-            <div class="row">
-                <div class="col pb-5">
-                    <p class="text-center">
-                        The best technology stack for your applications is the one that suits your business goals. You'll want to be meticulous when choosing development stacks for your project and we are here to help you.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card wow fadeInDown" data-wow-delay="0.9s">
-                            <img src="assets/img/stack-lamp.png" class="card-img-top" alt="LAMP">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">LAMP</h5>
-                                <p class="card-text">Linux, Apache, MySQL, and PHP.</p>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInDown" data-wow-delay="0.9s">
-                            <img src="assets/img/stack-django-flask.png" class="card-img-top" alt="Django/Flask">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">Django/Flask</h5>
-                                <p class="card-text">Django/Flask, Python, and MySQL.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck">
-                        <div class="card wow fadeInDown" data-wow-delay="0.9s">
-                            <img src="assets/img/stack-mean-mern.png" class="card-img-top" alt="MEAN/MERN">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">MEAN/MERN</h5>
-                                <p class="card-text">MongoDB, Express, AngularJS/ReactJS, and Node.js.</p>
-                            </div>
-                        </div>
-                        <div class="card wow fadeInDown" data-wow-delay="0.9s">
-                            <img src="assets/img/stack-ror.png" class="card-img-top" alt="MEAN/MERN">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex justify-content-between">RoR</h5>
-                                <p class="card-text">Ruby on Rails, Ruby and MySQL.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Stacks Section End -->
-
-
-    <!-- Technologies Section Start -->
-    <section id="technologies" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Technologies We Use</h2>
-                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-            </div>
-            <div class="row">
-                <div class="col pb-5">
-                    <p class="text-center">
-                        Furnished with cutting edge technology, we have the right tool to serve your need.
-                    </p>
-                </div>
-            </div>
-            <div class="shadow p-5">
-                <div class="row border-between">
-                    <div class="col-md-6 technology-desc wow fadeInLeft" data-wow-delay="0.9s">
-                        <h3>Back-End</h3>
-                        <p><strong>Languages</strong>:</p>
-                        <ul>
-                            <li>PHP</li>
-                            <li>Python</li>
-                            <li>NodeJS (JavaScript)</li>
-                            <li>Ruby</li>
-                        </ul>
-                        <p><strong>Frameworks</strong>:</p>
-                        <ul>
-                            <li>PHP: Laravel, CodeIgniter</li>
-                            <li>NodeJS: Express, Koa, Meteor, Sails, SocketIO</li>
-                            <li>Python: Django, Flask, Quart, FastAPI, AIOHTTP</li>
-                            <li>Ruby: Rails</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 technology-desc wow fadeInRight" data-wow-delay="0.9s">
-                        <h3>Front-End</h3>
-                        <p><strong>Languages</strong>:</p>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>SAAS, LESS, SCSS, TypeScript</li>
-                        </ul>
-                        <p><strong>Frameworks</strong>:</p>
-                        <ul>
-                            <li>JavaScript: Angular, React, Vue, jQuery</li>
-                            <li>CSS: Bootstrap, Foundation, Bulma, Tailwind</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row border-between">
-                    <div class="col-md-6 technology-desc border-top-theme wow fadeInLeft" data-wow-delay="0.9s">
-                        <h3>Databases</h3>
-                        <ul>
-                            <li>MySQL</li>
-                            <li>MariaDB</li>
-                            <li>Oracle</li>
-                            <li>PostgreSQL</li>
-                            <li>SQL Server</li>
-                            <li>SQLite</li>
-                            <li>MongoDB</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 technology-desc border-top-theme wow fadeInRight" data-wow-delay="0.9s">
-                        <h3>Operating System</h3>
-                        <ul>
-                            <li>Windows</li>
-                            <li>macOS</li>
-                            <li>Linux</li>
-                            <li>iOS</li>
-                            <li>Android</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row border-between">
-                    <div class="col-md-6 technology-desc border-top-theme wow fadeInLeft" data-wow-delay="0.9s">
-                        <h3>Architectures</h3>
-                        <ul>
-                            <li>Microservices-based architecture</li>
-                            <li>Event-driven architectures</li>
-                            <li>Headless</li>
-                            <li>Serverless</li>
-                            <li>PWA</li>
-                            <li>Cloud-native architecture</li>
-                            <li>Reactive architecture</li>
-                            <li>Service-oriented architecture (SOA)</li>
-                            <li>Traditional 3-layer architecture</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 technology-desc border-top-theme wow fadeInRight" data-wow-delay="0.9s">
-                        <h3>IoT (Internet of Things)</h3>
-                        <ul>
-                            <li>Arduino</li>
-                            <li>Raspberry Pi</li>
-                            <li>Orange Pi</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- Technologies Section End -->
-
-    <!-- Contact Section Start -->
-    <section id="contact" class="section-padding bg-gray">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Countact Us</h2>
-                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-            </div>
-            <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-lg-7 col-md-12 col-sm-12">
-                    <div class="contact-block">
-                        <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required data-error="Please enter your name">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Subject" id="msg_subject" class="form-control" required data-error="Please enter your subject">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="6" data-error="Write your message" required></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="submit-button text-left">
-                                        <button class="btn btn-common" id="form-submit" type="submit">Send Message</button>
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-12 col-xs-12">
-                    <div class="map">
-                        <object style="border:0; height: 280px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2957.6045953364014!2d-87.9346031493044!3d42.15874745568195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fbe9ff47df361%3A0x8b5c168f8973f170!2s1183%20Johnson%20Dr%20Apt%202811%2C%20Buffalo%20Grove%2C%20IL%2060089%2C%20USA!5e0!3m2!1sen!2sbd!4v1644157125514!5m2!1sen!2sbd"></object>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section End -->
-
-    <!-- Footer Section Start -->
-    <footer id="footer" class="footer-area section-padding">
-        <div class="container">
+        </section>
+        <footer class="bg-white">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="widget">
-                            <h3 class="footer-logo"><img src="assets/img/jazztech-logo.png" alt="">&nbsp;</h3>
-                            <div class="textwidget">
-                                <p>One stop solution provider for your Digital Transformation.</p>
-                            </div>
-                            <div class="social-icon pt-3">
-                                <a class="facebook" href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
-                                <a class="twitter" href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a>
-                                <a class="instagram" href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a>
-                                <a class="linkedin" href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a>
-                            </div>
-                        </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="mb-2 mb-md-0">
+                        ©
+                        <span id="year"></span>
+                        JazzTech. All rights reserved.
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h3 class="footer-titel pt-2">Know about us</h3>
-                        <ul class="footer-link">
-                            <li><a href="javascript:void(0)" class="trigger-link" data-link="nav-about">About</a></li>
-                            <li><a href="javascript:void(0)" class="trigger-link" data-link="nav-services">Services we provide</a></li>
-                            <li><a href="javascript:void(0)" class="trigger-link" data-link="nav-process">Our work process</a></li>
-                            <li><a href="javascript:void(0)" class="trigger-link" data-link="nav-stacks">Stacks we Mastered</a></li>
-                            <li><a href="javascript:void(0)" class="trigger-link" data-link="nav-technologies">Technologies we use</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h3 class="footer-titel pt-2">Contact</h3>
-                        <ul class="footer-link">
-                            <li>
-                                <a href="javascript:void(0)"><i class="lni lni-map-marker"></i>1183 Johnson Dr Apt 2811 Buffalo Grove IL 60089</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><i class="lni lni-mobile"></i>+1 (929) 231-0909</a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@jazztech.us" target="_blank"><i class="lni lni-envelope"></i>info@jazztech.us</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div>Backend, automation, and integration engineering.</div>
                 </div>
             </div>
-        </div>
-        <div id="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="copyright-content">
-                            <p>Copyright © 2020+ <a rel="nofollow" href="javascript:void(0)"><strong>JazzTech</strong></a>. All Right Reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Go to Top Link -->
-    <a href="javascript:void(0)" class="back-to-top">
-        <i class="lni lni-arrow-up-circle"></i>
-    </a>
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader" id="loader-1"></div>
-    </div>
-    <!-- End Preloader -->
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery-min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/jquery.nav.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/form-validator.min.js"></script>
-    <script src="assets/js/contact-form-script.min.js"></script>
-
-</body>
-
+        </footer>
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script>
+            // Set year
+            document.getElementById("year").textContent = new Date().getFullYear();
+            // Handle active state + mobile collapse manually
+            document.addEventListener("DOMContentLoaded", function () {
+                var navLinks = document.querySelectorAll("#mainNav .nav-link");
+                var navbarCollapseEl = document.getElementById("mainNav");
+                var bsCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
+                navLinks.forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        // Update active class
+                        navLinks.forEach(function (l) {
+                            l.classList.remove("active");
+                        });
+                        this.classList.add("active");
+                        // Collapse menu on small screens
+                        var toggler = document.querySelector(".navbar-toggler");
+                        if (getComputedStyle(toggler).display !== "none") {
+                            bsCollapse.hide();
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
 </html>
